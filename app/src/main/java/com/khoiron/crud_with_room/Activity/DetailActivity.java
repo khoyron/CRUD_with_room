@@ -10,7 +10,6 @@ import android.util.Log;
 import com.khoiron.crud_with_room.R;
 import com.khoiron.crud_with_room.Room.AppDatabase;
 import com.khoiron.crud_with_room.Room.Mahasiswa;
-import com.khoiron.crud_with_room.Room.MyApp;
 import com.khoiron.crud_with_room.Utility.RecycleAdapter;
 
 import java.util.ArrayList;
@@ -18,6 +17,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.khoiron.crud_with_room.Room.MyApp.db;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -38,7 +39,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void fetchDataFromRoom() {
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+        db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class,"mahasiswa").allowMainThreadQueries().build();
         listMahasiswas = db.userDao().getAll();
 
