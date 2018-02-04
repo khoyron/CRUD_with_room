@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btInsert)void buttonListener(){
 
         if (!etAlamat.getText().toString().isEmpty()&&!etKejuruan.getText().toString().isEmpty()&&
-                !etNama.getText().toString().isEmpty()&&etNim.getText().toString().isEmpty()){
+                !etNama.getText().toString().isEmpty()&&!etNim.getText().toString().isEmpty()){
 
             mahasiswa = new Mahasiswa();
             mahasiswa.setAlamat(etAlamat.getText().toString());
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
             //Insert data in database
             db.userDao().insertAll(mahasiswa);
             startActivity(new Intent(MainActivity.this,DetailActivity.class));
+        }else {
+            Toast.makeText(this, "Mohon masukkan dengan benar", Toast.LENGTH_SHORT).show();
         }
 
     }
