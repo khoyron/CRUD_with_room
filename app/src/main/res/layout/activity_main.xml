@@ -8,24 +8,28 @@
     tools:context="com.khoiron.crud_with_room.Activity.MainActivity">
 
     <EditText
+        android:singleLine="true"
         android:hint="Nama"
         android:id="@+id/etNama"
         android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
+        android:singleLine="true"
         android:hint="NIM"
         android:id="@+id/etNim"
         android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
+        android:singleLine="true"
         android:hint="Kejuruan"
         android:id="@+id/etKejuruan"
         android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
+        android:singleLine="true"
         android:hint="Alamat"
         android:id="@+id/etAlamat"
         android:layout_margin="5dp"
